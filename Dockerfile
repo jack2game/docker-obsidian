@@ -2,7 +2,7 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 
 ARG BUILD_DATE
 ARG VERSION
-ARG OBSIDIAN_VERSION=1.4.16
+ARG OBSIDIAN_VERSION=1.5.8
 # LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="rsmacapinlac"
 
@@ -40,6 +40,12 @@ RUN dl_url="https://github.com/obsidianmd/obsidian-releases/releases/download/v$
 
 # add local files
 COPY /root /
+
+# install fonts
+RUN \
+    mkdir -p /usr/share/fonts/truetype && \
+	install -m644 ./*.ttf /usr/share/fonts/truetype/ && \
+	rm ./*.ttf
 
 # ports
 EXPOSE 8080
