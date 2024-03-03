@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:arch
 
 ARG BUILD_DATE
 ARG VERSION
@@ -27,10 +27,10 @@ RUN \
         libnss3
 
 # Install obsidian
-RUN dl_url="https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VERSION}/obsidian_${OBSIDIAN_VERSION}_amd64.deb" && \
-    curl --location --output obsidian.deb "$dl_url" && \
-    dpkg -i obsidian.deb && \
-	rm obsidian.deb
+RUN dl_url="https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VERSION}/Obsidian-${OBSIDIAN_VERSION}-arm64.AppImage" && \
+    curl --location --output /obsidian.AppImage "$dl_url" && \
+    chmod +x /obsidian.AppImage && \
+    /obsidian.AppImage --appimage-extract
 
 # add local files
 COPY /root /
