@@ -14,7 +14,7 @@ Here are some example snippets to help you get started creating a container.
 version: '3'
 services:
   obsidian:
-    image: 'rsmacapinlac/docker-obsidian:latest'
+    image: 'jack2game/docker-obsidian:latest'
     container_name: obsidian
     restart: unless-stopped
     ports:
