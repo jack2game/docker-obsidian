@@ -9,7 +9,7 @@ Here are some example snippets to help you get started creating a container.
 ### docker-compose (amd64)
 
 ```yaml
-WEB_PORT=12803
+WEB_PORT=12345
 rm -rfv $HOME/docker/obsidian/config
 mkdir -p $HOME/docker/obsidian/vaults
 mkdir -p $HOME/docker/obsidian/config
