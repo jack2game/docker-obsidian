@@ -40,7 +40,6 @@ RUN \
     mkdir -p /usr/share/fonts/truetype && \
 	install -m644 ./*.ttf /usr/share/fonts/truetype/ && \
 	rm ./*.ttf && \
-    && \
     echo "**** cleanup ****" && \
         apt-get autoclean && \
         rm -rf \
