@@ -43,8 +43,6 @@ COPY /root /
 
 # ports
 EXPOSE 8080
-EXPOSE 27123
-EXPOSE 27124
 
 # volumes
 VOLUME ["/config"]
